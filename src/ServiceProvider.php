@@ -126,13 +126,7 @@ class ServiceProvider extends LaravelServiceProvider
     protected function setupRoute()
     {
         $source = realpath(__DIR__ . '/route.php');
-
-        if (str_is('5.2.*', $this->app::VERSION)) {
-            $targetPath = base_path('app/Http/rpc.php');
-        } else {
-            $targetPath = base_path('routes/rpc.php');
-        }
-
+        $targetPath = base_path('routes/rpc.php');
         $this->publishes([$source => $targetPath]);
     }
 
