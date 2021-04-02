@@ -1,12 +1,12 @@
 {
-    "name": "zhuqipeng/laravel-hprose",
-    "description": "Hprose for Laravel",
-    "keywords": ["hprose", "laravel"],
+    "name": "dearyuan/zhaoqi_rpc",
+    "description": "zhaoqi rpc",
+    "keywords": ["hprose"],
     "license": "MIT",
     "authors": [
         {
-            "name": "朱其鹏",
-            "email": "28942998@qq.com"
+            "name": "dearyuan",
+            "email": "yuan2quicker"
         }
     ],
     "require": {

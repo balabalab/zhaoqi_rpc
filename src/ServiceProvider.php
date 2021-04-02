@@ -43,12 +43,7 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function loadRoute()
     {
-        if (str_is('5.2.*', $this->app::VERSION)) {
-            $routeFilePath = base_path('app/Http/rpc.php');
-        } else {
-            $routeFilePath = base_path('routes/rpc.php');
-        }
-
+        $routeFilePath = base_path('routes/rpc.php');
         if (file_exists($routeFilePath)) {
             require $routeFilePath;
         } else {
