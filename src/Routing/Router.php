@@ -1,6 +1,7 @@
 <?php
 
 namespace Zhuqipeng\LaravelHprose\Routing;
+use Illuminate\Support\Arr;
 
 class Router
 {
@@ -157,7 +158,7 @@ class Router
         $new['namespace'] = $this->formatNamespace($new, $old);
         $new['prefix'] = $this->formatPrefix($new, $old);
 
-        return array_merge_recursive(array_except($old, ['namespace', 'prefix']), $new);
+        return array_merge_recursive(Arr::except($old, ['namespace', 'prefix']), $new);
     }
 
     /**
@@ -176,7 +177,7 @@ class Router
             return trim($new['namespace'], '\\');
         }
 
-        return array_get($old, 'namespace');
+        return Arr::get($old, 'namespace');
     }
 
     /**
@@ -210,10 +211,10 @@ class Router
     private function formatPrefix(array $new, array $old)
     {
         if (isset($new['prefix'])) {
-            return trim(array_get($old, 'prefix'), '_') . '_' . trim($new['prefix'], '_');
+            return trim(Arr::get($old, 'prefix'), '_') . '_' . trim($new['prefix'], '_');
         }
 
-        return array_get($old, 'prefix', '');
+        return Arr::get($old, 'prefix', '');
     }
 
     /**

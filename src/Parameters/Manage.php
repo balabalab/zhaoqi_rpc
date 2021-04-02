@@ -3,6 +3,7 @@
 namespace Zhuqipeng\LaravelHprose\Parameters;
 
 use Zhuqipeng\LaravelHprose\Parameters\Base;
+use Illuminate\Support\Arr;
 
 class Manage
 {
@@ -46,10 +47,10 @@ class Manage
     {
         $errors = null;
 
-        if ($map = array_get($this->map, $methodName)) {
-            $parameterNames = array_get($map, 'parameterNames', []);
+        if ($map = Arr::get($this->map, $methodName)) {
+            $parameterNames = Arr::get($map, 'parameterNames', []);
             $validationData = $this->combine($parameterNames, $args);
-            if ($parameter = array_get($map, 'parameter')) {
+            if ($parameter = Arr::get($map, 'parameter')) {
                 $this->setParameterAttribute($parameter, $validationData);
 
                 $validate = \Validator::make($validationData, $parameter->rules(), $parameter->messages());
