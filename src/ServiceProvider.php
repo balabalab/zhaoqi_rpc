@@ -43,6 +43,11 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function loadRoute()
     {
+
+        if (strpos(app()->version(), 'Lumen') === 0)
+        {
+            class_alias(Facades\Router::class, 'LaravelHproseRouter');
+        }
         $routeFilePath = base_path('routes/rpc.php');
         if (file_exists($routeFilePath)) {
             require $routeFilePath;

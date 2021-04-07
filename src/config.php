@@ -27,5 +27,5 @@ return [
 
     'parameter' => 'App\\Controllers\\Parameters',
 
-    'controller' => 'App\\Controllers',
+    'controller' => env('HPROSE_CONTROLLER_NAMESPACE', 'App\\Controllers'),
 ];

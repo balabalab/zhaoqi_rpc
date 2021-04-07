@@ -15,6 +15,9 @@
         "hprose/hprose-swoole": "dev-master"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
             "Zhuqipeng\\LaravelHprose\\": "src/"
         }

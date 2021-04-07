@@ -24,7 +24,7 @@ class Base extends Command
     protected function outputInfo($scheme = 'tcp')
     {
         $this->comment('版本:');
-        $this->output->writeln(sprintf(' - Laravel=<info>%s</>', app()::VERSION), $this->parseVerbosity(null));
+        $this->output->writeln(sprintf(' - <info>%s</>', app()->version()), $this->parseVerbosity(null));
         $this->output->writeln(sprintf(' - Hprose-php=<info>2.0.0</>'), $this->parseVerbosity(null));
         $this->output->newLine();
 
